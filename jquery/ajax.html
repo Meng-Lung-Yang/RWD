@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <select id="city">
+        <option value="">請選擇</option>
+        <option value="Taipei">台北</option>
+        <option value="Taitung">台東</option>
+        <option value="Tokyo">東京</option>
+        <option value="London">倫敦</option>
+    </select>
+    <div class="weathers">
+
+    </div>
+
+    <script>
+        $(function(){
+            $("#city").change(function(){
+                $(".weathers").empty();
+                let city = $("#city").val();
+                console.log(city);
+
+                $.ajax({
+                    url:"https://api.openweathermap.org/data/2.5/weather",
+                    data:{
+                        q:city,
+                        appid:"d49c8cbca8f9a923c1fa67c934f03773",
+                        units:"metric"
+                    },
+                    success:function(data){
+                        console.log(data);
+                        // console.log(data.coord.lon);
+                        // console.log(data.coord.lat);
+                        // console.log(data.weather[0].description);
+                        // console.log(data.main.temp);
+
+                        let temp = data.main.temp;
+                        let desc = data.weather[0].description;
+                        let sunrise = new Date(data.sys.sunrise*1000);
+                        let sunrise_hours = sunrise.getHours();
+                        let sunrise_mins = sunrise.getMinutes();
+                        let sunrise_seconds = sunrise.getSeconds();
+                        let sunset = new Date(data.sys.sunset*1000);
+                        let sunset_hours = sunset.getHours();
+                        let sunset_mins = sunset.getMinutes();
+                        let sunset_seconds = sunset.getSeconds();
+                        let content = `
+                        <h2>今日天氣</h2>
+                        <div>氣溫：${temp}</div>
+                        <div>天氣狀況：${desc}</div>
+                        <div>日出時間：${sunrise_hours}:${sunrise_mins}:${sunrise_seconds}</div>
+                        <div>日落時間：${sunset_hours}:${sunset_mins}:${sunset_seconds}</div>
+                        `;
+                        $(".weathers").append(content);
+                    },
+                    error:function(){
+                        console.log("error");
+                    }
+                })
+            })  
+        })
+    </script>
+</body>
+</html>

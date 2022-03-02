@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI";
+        }
+        .container{
+            width: 600px;
+            margin: auto;
+        }
+        h2{
+            background-color: #fa0;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+        }
+        p{
+            background-color: #af0;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+        </p>
+        <h2>title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+        </p>
+        <h2>title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+        </p>
+        <h2>title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic sequi quos doloribus recusandae? Minima omnis provident iste hic praesentium cum, esse suscipit beatae nostrum autem, quibusdam incidunt voluptatum ipsum!
+        </p>
+    </div>
+
+    <script>
+        $("h2").click(function(){
+        // $("h2").hover(function(){
+            // $(this).next().toggle();
+            // $(this).next().fadeToggle(600);
+            $(this).next().stop().slideToggle();
+        });
+    </script>
+</body>
+</html>

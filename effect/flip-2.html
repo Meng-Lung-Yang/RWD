@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flip{
+            width: 200px;
+            height: 300px;
+            position: relative;
+            perspective: 1000px; /* 透視點 */
+        }
+        .front, .back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-origin: left;
+        }
+        .front{
+            background-color: #fa0;
+            transition: .8s;
+        }
+        .back{
+            background-color: #0af;
+            transform: rotateY(270deg);
+            backface-visibility: hidden;
+            transition: .8s;
+            opacity: 0;
+        }
+        .flip:hover .front{
+            transform: rotateY(60deg);
+        }
+        .flip:hover .back{
+            transform: rotateY(360deg);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="flip">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .tabs{
+            width: 800px;
+            margin: auto;
+        }
+        .tab-nav{
+            display: flex;
+        }
+        .tab-link{
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #ccc;
+            color: #222;
+        }
+        .tab-link.active{
+            background-color: #ffc85c;
+        }
+        .tab-panel{
+            padding: 10px;
+            background-color: #ffc85c;
+            display: none;
+        }
+        .tab-panel.active{
+            display: block;
+            animation: fade-in .8s;
+        }
+        @keyframes fade-in{
+            from {opacity: 0; transform: translateY(30%)};
+            to {opacity: 1; transform: translateY(0)};
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <nav class="tab-nav">
+            <a href="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" class="tab-link">tab 3</a>
+            <a href="#tab-4" class="tab-link">tab 4</a>
+        </nav>
+        <div id="tab-1" class="tab-panel active">
+            <h2>Title 1</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, voluptatibus atque impedit et nesciunt voluptatum. Velit excepturi, deleniti voluptates eligendi nisi recusandae, nam, asperiores ullam repellendus sapiente labore nemo est debitis voluptatem voluptas perferendis temporibus. Mollitia laudantium harum odio in unde sequi nemo voluptatem dolorem, molestiae eaque voluptates, expedita similique! Neque repellendus quia sint, quidem obcaecati est omnis velit odio itaque repellat hic delectus error veritatis labore alias, suscipit quas? Quis tempora omnis rerum nostrum vitae officia eum saepe corrupti.
+            </p>
+        </div>
+        <div id="tab-2" class="tab-panel">
+            <h2>Title 2</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum maiores beatae sint quia nisi architecto sequi, facere in, cumque quaerat rerum! Totam assumenda accusamus hic repellendus expedita quod dolorum obcaecati eaque aliquid! Explicabo quasi adipisci aperiam ipsa molestiae quia nemo nobis alias numquam, facere in autem expedita vel fugit impedit nisi eius eaque harum rerum hic corrupti asperiores cum quae accusamus. Consectetur itaque velit est dignissimos rerum? Reprehenderit veniam dolorem repudiandae asperiores error iure. Voluptatem perferendis doloribus quasi error totam sequi reiciendis odio facilis, nam labore. Voluptatibus dolor unde blanditiis molestias aut vel sequi dolore fugit distinctio natus aperiam ducimus saepe velit sit quod odit, voluptas consectetur ipsa similique a excepturi placeat quasi corrupti numquam! Corporis assumenda quod id ullam.
+            </p>
+        </div>
+        <div id="tab-3" class="tab-panel">
+            <h2>Title 3</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, facere explicabo assumenda optio quas commodi error sapiente consequatur. Non ratione atque eligendi nihil laborum nisi assumenda nesciunt provident temporibus deleniti dicta harum earum, nobis perspiciatis fugit amet? Voluptas sapiente alias exercitationem deleniti et, atque quod nihil dolorum saepe dignissimos fugit minus at? Perferendis asperiores eum placeat, nostrum eaque facilis! Unde, laudantium? Autem delectus est dignissimos sint? Numquam, possimus vel suscipit delectus rerum eaque quaerat odit aut vitae hic obcaecati tempora quibusdam veniam aspernatur amet. Quo labore delectus nihil molestias ducimus odit, earum ipsam obcaecati sequi libero cupiditate quos est architecto!
+            </p>
+        </div>
+        <div id="tab-4" class="tab-panel">
+            <h2>Title 4</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio deserunt temporibus impedit dolorem delectus magni quidem accusamus harum iusto, maiores maxime eum fugiat quas nulla dignissimos beatae possimus. Obcaecati iste illum incidunt repellat repellendus voluptatem dolorum ducimus voluptate recusandae itaque! Similique illum sed error consectetur rem soluta. Quam repudiandae non laudantium veritatis voluptate ipsam voluptatem doloribus vitae neque nihil a quas, ratione dolore distinctio est nulla eveniet minima iusto autem, similique, nisi consequuntur praesentium. Inventore sapiente incidunt veritatis ex consectetur, aliquam quidem libero nam exercitationem? Esse delectus obcaecati sint quia eius unde vitae sapiente similique, a assumenda nam reprehenderit optio, quis iure praesentium! Nesciunt numquam, corrupti reiciendis ex doloribus facere impedit minima ea earum eos ut ad repellendus nihil saepe distinctio vel culpa aperiam quae mollitia voluptas praesentium. Aliquid vel optio nemo ratione et tempora necessitatibus veniam! Fugit, commodi quis saepe dolores id est ipsum numquam necessitatibus nemo repudiandae similique?
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let tabLinks = document.querySelectorAll(".tab-link");
+        console.log(tabLinks);
+        for(let tabLink of tabLinks){
+            tabLink.onclick = function(){
+                for(let tabLink of tabLinks){
+                    tabLink.classList.remove("active");
+                }
+                // console.log(this);
+                this.classList.add("active");
+
+                // panel
+                let panels = document.querySelectorAll(".tab-panel");
+                // console.log(panels);
+
+                let href = this.getAttribute("href");
+                // console.log(href);
+
+                for(let panel of panels){
+                    console.log(panel.id);
+                    if(href === "#"+ panel.id){
+                        panel.classList.add("active");
+                    }else{
+                        panel.classList.remove("active");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

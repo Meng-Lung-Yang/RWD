@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/scss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" integrity="sha512-b42SanD3pNHoihKwgABd18JUZ2g9j423/frxIP5/gtYgfBz/0nDHGdY/3hi+3JwhSckM3JLklQ/T6tJmV7mZEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", "Microsoft Jhenghei";
+            box-sizing: border-box;
+        }
+        #logo{
+            border-top: 3px solid #fa0;
+            justify-content: center;
+            text-align: center;
+            align-items: flex-end;
+            height: 160px;
+            padding-bottom: 30px;
+            background-color: #aaa;
+        }
+        nav{
+            background-color: #fa0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            box-shadow: 0px 3px 2px rgba(0,0,0,.5);
+        }
+        nav li{
+            list-style: none;
+        }
+        nav ul.row{
+            justify-content: center;
+            width: 100%;
+        }
+        nav a{
+            display: inline-block;
+            padding: 0 30px;
+            text-decoration: none;
+            color: #fff;
+        }
+        header{
+            height: 600px;
+        }
+        header img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        img{
+            width: 100%;
+        }
+        /*   
+            *= 包含
+            ^= 開頭
+            $= 結尾
+        */
+        [class^="col"]{
+            padding: 0 20px;
+        }
+        #news{
+            padding-bottom: 100px;
+            background: url("https://picsum.photos/id/210/1600/800") center center no-repeat;
+            background-size: cover;
+        }
+        #news .news-item{
+            transform: translateY(-40%);
+        }
+        #info{
+            justify-content: center;
+        }
+        #info h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        /* #info .col-9{
+            background-color: #999;
+        } */
+        .info-item{
+            margin: 5px 0;
+        }
+        .info-item i{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #fa0;
+            text-align: center;
+            line-height: 50px;
+            clip-path: circle();
+        }
+        #info h2, .col-4, .col-5{
+            color: #fff;
+        }
+        footer{
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo" class="full-width row">
+        <div class="col-4">
+            <h1>LOGO</h1>
+        </div>
+    </div>
+    <nav class="full-width row">
+        <ul class="row">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Menu</a></li>
+        </ul>
+    </nav>
+    <header class="full-width">
+        <img src="https://picsum.photos/id/1054/1200/600" alt="">
+    </header>
+    <div id="news" class="full-width">
+        <div class="fixed-width row">
+            <div class="col-xl-4 col-sm-12 news-item wow fadeInUp" data-wow-delay="0s" data-wow-offset="200">
+                <a href="#"><img src="https://picsum.photos/id/35/800/600" alt=""></a>
+            </div>
+            <div class="col-xl-4 col-sm-6 news-item wow fadeInUp" data-wow-delay=".5s" data-wow-offset="200">
+                <a href="#"><img src="https://picsum.photos/id/45/800/600" alt=""></a>
+            </div>
+            <div class="col-xl-4 col-sm-6 news-item wow fadeInUp" data-wow-delay="1s" data-wow-offset="200">
+                <a href="#"><img src="https://picsum.photos/id/65/800/600" alt=""></a>
+            </div>
+        </div>
+        <div class="fixed-width row" id="info">
+            <div class="col-9 row">
+                <div class="col-12">
+                    <h2>快熱頌</h2>
+                </div>
+                <div class="col-7 row">
+                    <div class="col-4 info-item">
+                        <i class="fas fa-democrat fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-democrat fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-democrat fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-democrat fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-crow fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-crow fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-crow fa-2x"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fas fa-crow fa-2x"></i>
+                        TEXT
+                    </div>
+                </div>
+                <div class="col-5">          
+                    <h3><i class="fas fa-frog"></i> 營業時間</h3>
+                    <div>11：30 ~ 14：30 最後點餐時間14：00</div>
+                    <div>17：30 ~ 22：00 最後點餐時間21：00</div>
+                    <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>© 2021 LOGO, Inc. All Rights Reserved</span>
+    </footer>
+
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

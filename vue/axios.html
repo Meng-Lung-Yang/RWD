@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="photo of photos">
+            <h2>{{photo.author}}</h2>
+            <img :src="photo.download_url" width="200" alt="">
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    photos: []
+                }
+            },
+            created(){
+                let url = "https://picsum.photos/v2/list";
+                axios.get(url)
+                .then(datas => {
+                    // console.log(datas.data);
+                    this.photos = datas.data;
+                })
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>

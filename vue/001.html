@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <p>
+            {{number}}
+        </p>
+        <img v-bind:src="image" alt="" :title="text">
+        <ul>
+            <li v-for="(drink,idx) of drinks">{{drink}} -- {{idx}}</li>
+        </ul>
+    </div>
+
+    <script>
+        // Vue.createApp({
+        //     data(){
+        //         return {
+        //             title: "Hello Vue!!",
+        //             number: 100
+        //         }
+        //     }
+        // }).mount("#app");
+
+
+        const app = Vue.createApp({
+            data(){
+                return {
+                    title: "Hello Vue!!",
+                    number: 100,
+                    image: "https://picsum.photos/id/35/300",
+                    text: "Picsum Photos",
+                    drinks: ["紅茶", "綠茶", "拿鐵", "冰淇淋"]
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>

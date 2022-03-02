@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+        .colorBox{
+            width: 50px;
+            height: 50px; 
+        }
+        .prods{
+            display: flex;
+        }
+        .prods li{
+            border: 2px solid #000;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}} {{color}}</h2>
+        <img :src="image" alt="">
+        <ul class="inbox">
+            <li v-for="inbox of inBoxes">{{inbox}}</li>
+        </ul>
+        <ul class="prods">
+            <li @click="changeIndex(idx)" v-for="(prod,idx) of products" class="colorBox" :style="{backgroundColor:prod.color}">
+            </li>
+        </ul>
+        <ul class="prods">
+            <li @click="changeIndex(idx)" v-for="(prod,idx) of products">
+                <img :src="prod.image" width="100">
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    title: "iPhone 13",
+                    // image: "imgs/iphone-13-pro-max-graphite-select.png",
+                    inBoxes: ["iPhone","USB-C 對 Lightning 連接線"],
+                    currentIndex: 0,
+                    products: [
+                        {
+                            id: 1,
+                            image: "imgs/iphone-13-pro-max-graphite-select.png",
+                            colorName: "灰色",
+                            color: "#696969"
+                        },
+                        {
+                            id: 2,
+                            image: "imgs/iphone-13-pro-max-silver-select.png",
+                            colorName: "白色",
+                            color: "#fffafa"
+                        },
+                        {
+                            id: 3,
+                            image: "imgs/iphone-13-pro-max-blue-select.png",
+                            colorName: "藍色",
+                            color: "#b0c4de"
+                        },
+                        {
+                            id: 4,
+                            image: "imgs/iphone-13-pro-max-gold-select.png",
+                            colorName: "金色",
+                            color: "#fff8dc"
+                        },
+                    ]
+                }
+            },
+            methods: {
+                changeIndex(idx){
+                    // console.log(idx);
+                    this.currentIndex = idx;
+                }
+            },
+            computed: {
+                color(){
+                    return this.products[this.currentIndex].colorName;
+                },
+                image(){
+                    return this.products[this.currentIndex].image;
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>

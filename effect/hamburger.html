@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <style>
+        .humburger{
+            width: 50px;
+            height: 50px;
+            /* background-color: #ccc; */
+            position: relative;
+        }
+        .humburger span{
+            width: 100%;
+            height: 10px;
+            background-color: rgb(230, 12, 12);
+            position: absolute;
+            inset: 0;
+            margin: auto;    
+        }
+        .humburger span::before{
+            content: "";
+            width: 100%;
+            height: 10px;
+            background-color: rgb(250, 100, 0);
+            position: absolute;
+            bottom: 15px;
+        }
+        .humburger span::after{
+            content: "";
+            width: 100%;
+            height: 10px;
+            background-color: rgb(250, 100, 0);
+            position: absolute;
+            top: 15px;
+        }
+        .humburger span, .humburger span::before, .humburger span::after{
+            transition: .6s;
+        }
+        .humburger.active span{
+            background-color: transparent;
+        }
+        .humburger.active span::before{
+            transform:rotate(45deg);
+            bottom: 0;
+        }
+        .humburger.active span::after{
+            transform:rotate(-45deg);
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="humburger">
+        <span></span>
+    </div>
+
+    <script>
+        $(function () {
+            $(".humburger").on("click", function(){
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                }else{
+                    $(this).addClass("active");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

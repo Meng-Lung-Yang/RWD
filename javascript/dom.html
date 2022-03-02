@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Hellow!!!</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas et odio quo eum cumque fugiat ut, cum vel consequuntur ducimus delectus nisi ab laboriosam debitis maiores, dolorem earum eligendi magni temporibus veritatis aperiam commodi velit. Ullam aliquid quam, minus deleniti itaque sint vero praesentium veritatis eum voluptas quisquam provident incidunt inventore officia ex consectetur facilis, ratione dolorem exercitationem placeat eos blanditiis consequuntur tenetur quos! Quibusdam officia doloremque est! Eligendi corrupti molestias soluta reprehenderit voluptate expedita accusamus. Minus distinctio dolor tempore, perferendis dicta culpa temporibus ducimus officia animi? Culpa officiis quia consequatur accusamus odit, illo ipsa quidem fuga sequi doloremque pariatur. Ea assumenda ipsum quis rem cupiditate eos ipsam! Eaque nemo earum ad deleniti, in ex aliquam omnis officia veritatis optio totam eos sit tempore aperiam. Mollitia consectetur amet, sapiente illum ullam delectus? Quibusdam voluptatem et fugit alias atque nihil a exercitationem, tenetur labore repellat molestiae, culpa recusandae magni libero eius sit provident ducimus impedit debitis? Incidunt necessitatibus impedit, unde fugiat nam est. Sapiente in numquam sit ipsum vero. Fuga veniam nam provident explicabo, temporibus qui error porro laudantium quod, nobis laborum amet a deleniti sed inventore, consequatur expedita dolor harum aliquid cum quis molestiae. Vel, error consectetur suscipit impedit minima voluptate aut non, et maiores cumque laboriosam! Quos consequatur fugiat sunt numquam voluptate, adipisci quo, magnam voluptas explicabo velit aperiam eligendi natus accusantium exercitationem saepe! Similique veritatis quibusdam modi. Hic maiores quis sit magnam, obcaecati aliquid vero, eligendi culpa ab, totam dolorum. Repudiandae cumque sequi vero, aperiam molestiae harum temporibus voluptatibus sit dolor unde facilis omnis ullam animi molestias, beatae modi alias iste praesentium perferendis nulla provident quis voluptas explicabo repellendus! Facere cum unde exercitationem in eveniet architecto dicta totam dolore, quae impedit doloribus iusto cumque ea quia rerum quis eos consequuntur explicabo. Dolore, molestiae sunt! Nobis aspernatur inventore corrupti.    
+    </p>
+    <ul id="menu">
+        <li class="item"><a href="#">link 1</a></li>
+        <li class="item"><a href="#">link 2</a></li>
+        <li class="item"><a href="#">link 3</a></li>
+    </ul>
+
+    <script>
+        // let item = document.querySelectorAll(".item");
+        // let item = document.getElementsByClassName("item");
+        // console.log(item);
+        // item.forEach(function(date){
+        //     console.log(date);
+        // })
+
+        // let title = document.querySelectorAll("#title")[0];
+        // let title = document.querySelector(".item");
+
+        // let title = document.getElementById("title");
+        // console.log(title);
+
+        // let h1 = document.getElementsByTagName("h1");
+        // console.log(h1);
+
+        let menu = document.querySelector("#menu");
+        console.log(menu.parentElement); //父元素
+        console.log(menu.parentNode); //父節點
+        console.log(menu.nextElementSibling); //上一個兄弟元素
+        console.log(menu.previousElementSibling); //下一個兄弟元素
+        console.log(menu.nextSibling); //上一個兄弟節點
+        console.log(menu.previousSibling); //下一個兄弟節點
+        console.log(menu.children); //子元素
+        console.log(menu.childNodes); //子節點
+        console.log(menu.childElementCount); //運算子元素
+    </script>
+</body>
+</html>

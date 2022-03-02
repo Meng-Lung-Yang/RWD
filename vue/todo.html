@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 90%;
+            margin: auto;
+        }
+        .todos li{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #000;
+        }
+        .todos li.completed{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <input type="text" id="input" v-model="input"><button v-on:click="add()">新增事項</button>
+        <ul class="todos">
+            <li class="todo-item" v-for="(todo,dix) of todos" :class="{completed:todo.completed}" @click="todo.completed = !todo.completed">
+                {{todo.name}}
+                <span class="del" @click="del(idx)">刪除</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    input: "",
+                    todos: [
+                        {
+                            name: "吃飯",
+                            completed: false
+                        },
+                        {
+                            name: "睡覺",
+                            completed: false
+                        },
+                        {
+                            name: "打東東",
+                            completed: true
+                        },
+                    ]
+                }
+            },
+            methods:{
+                add(){
+                    this.todos.push({
+                        name: this.input,
+                        completed: false
+                    })
+                    this.input = "";
+                },
+                del(idx){
+                    this.todos.splice(idx,1);
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>

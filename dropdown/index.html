@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    nav{
+        width: 100%;
+        height: 50px;
+        background-color: #fa0;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+        line-height: 50px;
+        margin: 0;
+        padding: 0;
+    }
+    nav a{
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .menu > li{
+        position: relative;
+    }
+    .dropdown-menu{
+        background-color: rgb(120, 215, 255);
+        display: none;
+
+        position: absolute;
+        width: 300px;
+        flex-direction: column;
+
+    }
+    nav li:hover .dropdown-menu{
+        display: flex;
+        animation: fade-in .6s;
+    }
+    @keyframes fade-in{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+</style>
+<body>
+    <nav>
+        <ul class="menu">
+            <li>
+                <a href="#">Menu 1</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu 2</a></li>
+            <li>
+                <a href="#">Menu 3</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Menu 4</a></li>
+            <li><a href="#">Menu 5</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

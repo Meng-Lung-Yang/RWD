@@ -1,0 +1,19 @@
+.b{
+    color: antiquewhite;
+}
+
+ul{
+    list-style: none;
+}
+
+.meun{
+    color: brown;
+}
+
+.menu .menu-list{
+    color: burlywood;
+}
+
+.menu2 > .menu-list{
+    color: antiquewhite;
+}

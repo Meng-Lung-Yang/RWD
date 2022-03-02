@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI";
+        }
+        .modal{
+            display: none;
+        }
+        .modal-overlay{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.8);
+            left: 0;
+            top: 0;
+        }
+        .modal-container{
+            background-color: #fff;
+            position: absolute;
+            width: 60%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-100%);
+            padding: 30px;
+            border-radius: 15px;
+        }  
+    </style>
+</head>
+<body>
+    <a href="#" data-modal="#modal-1" class="modal-btn">modal 1</a>
+    <a href="#" data-modal="#modal-2" class="modal-btn">modal 2</a>
+    <div class="modal" id="modal-1">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Modal 1</h3>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam ratione rem magni perferendis consequuntur culpa in quas iusto quam quibusdam exercitationem reprehenderit distinctio dolore accusantium voluptatem repudiandae voluptates omnis, magnam et quia. Ea nostrum quae cupiditate ad provident esse necessitatibus. Reiciendis blanditiis, tempore quae molestiae dignissimos dolore corrupti rerum vero odit autem ex perferendis corporis. Adipisci, omnis. Rem cumque cupiditate architecto quisquam facere, repellat voluptatum maxime dolore quaerat amet perspiciatis mollitia aut, voluptate, sapiente et? Autem delectus ipsa molestiae eaque quasi. In sequi sint pariatur sunt ipsum iure? Iure eligendi iste consequuntur omnis est id, molestiae dignissimos maiores illo!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close">關閉</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal-2">
+        <div class="modal-overlay modal-close"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Modal 2</h3>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aperiam ratione rem magni perferendis consequuntur culpa in quas iusto quam quibusdam exercitationem reprehenderit distinctio dolore accusantium voluptatem repudiandae voluptates omnis, magnam et quia. Ea nostrum quae cupiditate ad provident esse necessitatibus. Reiciendis blanditiis, tempore quae molestiae dignissimos dolore corrupti rerum vero odit autem ex perferendis corporis. Adipisci, omnis. Rem cumque cupiditate architecto quisquam facere, repellat voluptatum maxime dolore quaerat amet perspiciatis mollitia aut, voluptate, sapiente et? Autem delectus ipsa molestiae eaque quasi. In sequi sint pariatur sunt ipsum iure? Iure eligendi iste consequuntur omnis est id, molestiae dignissimos maiores illo!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close">關閉</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            $(".modal-btn").click(function(){
+                let modal = $(this).data("modal");
+                $(modal).fadeIn();
+            })
+            $(".modal-close").click(function(){
+                $(".modal").fadeOut();
+            })
+        })
+    </script>
+</body>
+</html>

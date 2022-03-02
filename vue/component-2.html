@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@next"></script>  
+</head>
+<body>
+    <div id="app">
+        <app-title :test="title" :user="admin"></app-title>
+        <app-btn @add-number="addNumber"></app-btn>
+        <h1>{{number}}</h1>
+    </div>
+    
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    title: "Hello Vue!!!",
+                    admin: "Andy",
+                    number: 0
+                }
+            },
+            methods:{
+                addNumber(v){
+                    this.number += v;
+                }
+            }
+        });
+        app.component("app-title",{
+            props: ["test","user"],
+            template:`
+                <div>
+                    <h1>{{test}} {{user}}</h1>
+                </div>
+            `,
+        });
+        app.component("app-btn",{
+            template:`<button @click="add()">Click</button>`,
+            methods:{
+                add(){
+                    this.$emit("add-number",2);
+                }
+            }
+        })
+        app.mount("#app");
+    </script>
+    
+</body>
+</html>

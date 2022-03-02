@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+            background-color: #ccc;
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+
+            flex-basis: 200px;
+            /* flex-shrink: ; */
+        }
+        .box{
+            width: calc(100% / 3);
+            background-color: #fa0;
+        }
+        .box:nth-last-of-type(1){
+            background-color: #0af;
+            flex-grow: 2;
+            /* order: 1; */
+        }
+        .box:nth-last-of-type(2){
+            background-color: #bada55;
+            flex-grow: 3;
+            /* order: 3; */
+        }
+        .box:nth-last-of-type(3){
+            background-color: pink;
+            flex-grow: 1;
+            /* order: 2; */
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            111Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique tenetur animi porro, tempora laudantium in at, quaerat corrupti illum hic accusantium totam aliquam eum fuga sequi repudiandae impedit quam, cum facere autem itaque ea odit. Aspernatur tenetur autem est, enim adipisci beatae, reiciendis vitae, illum fugit dolor laborum commodi!
+        </div>
+        <div class="box">
+            222Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quod similique, excepturi fugit pariatur repudiandae minima perspiciatis! Minus maxime nisi omnis, laudantium voluptatum fuga vero amet quasi eveniet id molestias quae quod, sit illum voluptatem corporis obcaecati odio tenetur. Voluptatem, ea. Maxime, sit fuga. Temporibus odio, molestias exercitationem omnis maxime accusamus in nihil eum ab ipsum blanditiis asperiores porro sed obcaecati, quae quis fugit esse ullam deserunt at cum eveniet. Quaerat, explicabo eligendi beatae repellendus, sint corporis quas vitae, ipsa dolor recusandae earum vero autem adipisci consequuntur. Amet quis velit doloremque repudiandae repellat dolores dolorem molestiae, iste, temporibus totam consequatur.
+        </div>
+        <div class="box">
+            333Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequuntur delectus tempora consectetur porro ea, fuga commodi dolores in? Illo consectetur dolor quam, velit totam officia suscipit quod facere, molestias explicabo sequi nisi necessitatibus dolorum veniam voluptas perspiciatis iure optio animi inventore temporibus. Commodi esse, dolores natus modi ipsam laudantium dicta dolore inventore tenetur voluptate dolorum non. Non consequuntur quasi, quas, sint officiis perspiciatis enim nihil fugiat eum quam temporibus dolorem dicta et molestiae! Minus deleniti fugiat ipsa alias veniam?
+        </div>
+    </div>
+</body>
+</html>
